@@ -30,14 +30,18 @@ export default function SlideTable() {
       <h3>Every sign has a unique combination — 4 elements × 3 modalities = 12</h3>
 
       {/* Legend */}
-      <div style={{ display: 'flex', gap: 36, marginBottom: 14, marginTop: 4, flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: 32, marginBottom: 14, marginTop: 4, flexWrap: 'wrap' }}>
         <div>
           <div style={{ fontSize: 13, color: 'var(--text-muted)', marginBottom: 5, fontWeight: 500 }}>Energy</div>
           <div style={{ display: 'flex', gap: 10 }}>
-            {Object.entries(energyColors).map(([k, v]) => (
+            {[
+              { k: 'Masculine', desc: 'active, outward' },
+              { k: 'Feminine', desc: 'receptive, inward' },
+            ].map(({ k, desc }) => (
               <div key={k} style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
-                <div style={{ width: 18, height: 12, borderRadius: 3, background: v }} />
+                <div style={{ width: 18, height: 12, borderRadius: 3, background: energyColors[k] }} />
                 <span style={{ fontSize: 13, color: 'var(--text)' }}>{k}</span>
+                <span style={{ fontSize: 11, color: 'var(--text-muted)' }}>({desc})</span>
               </div>
             ))}
           </div>
@@ -45,10 +49,15 @@ export default function SlideTable() {
         <div>
           <div style={{ fontSize: 13, color: 'var(--text-muted)', marginBottom: 5, fontWeight: 500 }}>Quality</div>
           <div style={{ display: 'flex', gap: 10 }}>
-            {Object.entries(modColors).map(([k, v]) => (
+            {[
+              { k: 'Cardinal', desc: 'initiates' },
+              { k: 'Fixed', desc: 'sustains' },
+              { k: 'Mutable', desc: 'adapts' },
+            ].map(({ k, desc }) => (
               <div key={k} style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
-                <div style={{ width: 18, height: 12, borderRadius: 3, background: v }} />
+                <div style={{ width: 18, height: 12, borderRadius: 3, background: modColors[k] }} />
                 <span style={{ fontSize: 13, color: 'var(--text)' }}>{k}</span>
+                <span style={{ fontSize: 11, color: 'var(--text-muted)' }}>({desc})</span>
               </div>
             ))}
           </div>
@@ -56,10 +65,16 @@ export default function SlideTable() {
         <div>
           <div style={{ fontSize: 13, color: 'var(--text-muted)', marginBottom: 5, fontWeight: 500 }}>Elements</div>
           <div style={{ display: 'flex', gap: 10 }}>
-            {Object.entries(elColors).map(([k, v]) => (
+            {[
+              { k: 'Fire', desc: 'passion, action' },
+              { k: 'Earth', desc: 'material, stable' },
+              { k: 'Air', desc: 'intellect, social' },
+              { k: 'Water', desc: 'emotion, intuition' },
+            ].map(({ k, desc }) => (
               <div key={k} style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
-                <div style={{ width: 18, height: 12, borderRadius: 3, background: v }} />
+                <div style={{ width: 18, height: 12, borderRadius: 3, background: elColors[k] }} />
                 <span style={{ fontSize: 13, color: 'var(--text)' }}>{k}</span>
+                <span style={{ fontSize: 11, color: 'var(--text-muted)' }}>({desc})</span>
               </div>
             ))}
           </div>
