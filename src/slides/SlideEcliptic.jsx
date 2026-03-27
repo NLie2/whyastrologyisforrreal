@@ -2,7 +2,7 @@ export default function SlideEcliptic() {
   const cx = 450, cy = 450, r = 240
   const signs = ['\u2648','\u2649','\u264A','\u264B','\u264C','\u264D','\u264E','\u264F','\u2650','\u2651','\u2652','\u2653']
   const names = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces']
-  const qualities = ['bold, initiating','stable, sensual','curious, versatile','nurturing, emotional','confident, dramatic','analytical, precise','harmonizing, diplomatic','intense, transformative','adventurous, philosophical','disciplined, ambitious','innovative, independent','intuitive, compassionate']
+  const qualities = ['bold, initiating','stable, sensual','curious, versatile','nurturing, emotional','confident, dramatic','analytical, precise','harmonizing, diplomatic','intense, transformative','adventurous, philosophical','disciplined, ambitious','technology, social change','intuitive, compassionate']
   const els = ['fire','earth','air','water','fire','earth','air','water','fire','earth','air','water']
   const elC = { fire: '#E07A5F', earth: '#81B29A', air: '#85B7EB', water: '#AFA9EC' }
 
