@@ -18,7 +18,7 @@ export default function SlideTimeline() {
     { year: 1939, label: 'WWII', color: 'var(--accent2)', tier: 1 },
     { year: 1969, label: 'Internet', color: 'var(--accent2)', tier: 4 },
     { year: 2015, label: 'HPMOR', color: 'var(--accent2)', tier: 0 },
-    { year: 2022, label: 'ChatGPT', color: 'var(--accent2)', tier: 5 },
+    { year: 2022, label: 'ChatGPT', color: 'var(--accent2)', tier: 3 },
   ]
 
   const minYear = -4500
