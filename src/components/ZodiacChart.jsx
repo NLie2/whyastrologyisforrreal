@@ -66,8 +66,8 @@ export default function ZodiacChart({ showControls = true, defaultView = 'signs'
     chart.push(
       <g key={`sign-${i}`}>
         <path d={sectorPath(R_OUTER, R_MID, startDeg, endDeg)} fill={ec.light} stroke={ec.text} strokeWidth="0.5" opacity="0.85" />
-        <text x={sx} y={sy} textAnchor="middle" dominantBaseline="central" fontSize="20" fill={ec.text}>{signs[i].sym}</text>
-        <text x={nx} y={ny} textAnchor="middle" dominantBaseline="central" fontSize="10" fill="var(--text-muted)">{signs[i].name}</text>
+        <text x={sx} y={sy} textAnchor="middle" dominantBaseline="central" fontSize="24" fill={ec.text}>{signs[i].sym}</text>
+        <text x={nx} y={ny} textAnchor="middle" dominantBaseline="central" fontSize="12" fill="var(--text-muted)">{signs[i].name}</text>
       </g>
     )
   }
@@ -80,7 +80,7 @@ export default function ZodiacChart({ showControls = true, defaultView = 'signs'
     <g key="earth-g" transform={`rotate(${earthRotation}, ${CX}, ${CY})`}>
       <line x1={CX - 14} y1={CY} x2={CX + 14} y2={CY} stroke="var(--air)" strokeWidth="0.5" opacity="0.4" />
       <line x1={CX} y1={CY - 14} x2={CX} y2={CY + 14} stroke="var(--air)" strokeWidth="0.5" opacity="0.4" />
-      <text x={CX} y={CY + 1} textAnchor="middle" dominantBaseline="central" fontSize="10" fill="var(--text)" fontWeight="500">Earth</text>
+      <text x={CX} y={CY + 1} textAnchor="middle" dominantBaseline="central" fontSize="12" fill="var(--text)" fontWeight="500">Earth</text>
     </g>
   )
 
@@ -92,8 +92,8 @@ export default function ZodiacChart({ showControls = true, defaultView = 'signs'
       <g key={`planet-${i}`}>
         <line x1={plx} y1={ply} x2={edx} y2={edy} stroke={p.color} strokeWidth="0.5" strokeDasharray="3 3" opacity="0.25" />
         <circle cx={plx} cy={ply} r={p.r} fill={p.color} opacity="0.85" />
-        <text x={plx} y={ply + 1} textAnchor="middle" dominantBaseline="central" fontSize={p.r > 7 ? 12 : 9} fill="#fff" fontWeight="500">{p.sym}</text>
-        <text x={lx} y={ly} textAnchor="middle" dominantBaseline="central" fontSize="10" fill="var(--text-muted)">{p.name}</text>
+        <text x={plx} y={ply + 1} textAnchor="middle" dominantBaseline="central" fontSize={p.r > 7 ? 14 : 10} fill="#fff" fontWeight="500">{p.sym}</text>
+        <text x={lx} y={ly} textAnchor="middle" dominantBaseline="central" fontSize="12" fill="var(--text-muted)">{p.name}</text>
       </g>
     )
   })
@@ -107,7 +107,7 @@ export default function ZodiacChart({ showControls = true, defaultView = 'signs'
       chart.push(
         <g key={`house-${i}`}>
           <line x1={l1x} y1={l1y} x2={l2x} y2={l2y} stroke="var(--text-muted)" strokeWidth="0.5" strokeDasharray="4 3" opacity="0.4" />
-          <text x={hx} y={hy} textAnchor="middle" dominantBaseline="central" fontSize="12" fill="var(--text-muted)">{houseLabels[i]}</text>
+          <text x={hx} y={hy} textAnchor="middle" dominantBaseline="central" fontSize="14" fill="var(--text-muted)">{houseLabels[i]}</text>
         </g>
       )
     }
@@ -125,7 +125,7 @@ export default function ZodiacChart({ showControls = true, defaultView = 'signs'
       chart.push(
         <g key={`axis-${i}`}>
           <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={a.color} strokeWidth="1.5" opacity="0.6" />
-          <text x={lx} y={ly} textAnchor="middle" dominantBaseline="central" fontSize="12" fill={a.color} fontWeight="500">{a.label}</text>
+          <text x={lx} y={ly} textAnchor="middle" dominantBaseline="central" fontSize="14" fill={a.color} fontWeight="500">{a.label}</text>
         </g>
       )
     })

@@ -38,16 +38,16 @@ export default function SlideEcliptic() {
             return (
               <g key={i}>
                 <line x1={lx1} y1={ly1} x2={lx2} y2={ly2} stroke={color} strokeWidth="0.8" opacity="0.35" />
-                <text x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize="36" fill={color}>{signs[i]}</text>
-                <text x={nx} y={ny} textAnchor="middle" dominantBaseline="central" fontSize="17" fill="var(--text-muted)">{names[i]}</text>
+                <text x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize="40" fill={color}>{signs[i]}</text>
+                <text x={nx} y={ny} textAnchor="middle" dominantBaseline="central" fontSize="20" fill="var(--text-muted)">{names[i]}</text>
               </g>
             )
           })}
 
           {/* Inner label */}
           <circle cx={cx} cy={cy} r={r - 65} fill="none" stroke="var(--accent)" strokeWidth="1" strokeDasharray="5 5" opacity="0.2" />
-          <text x={cx} y={cy - 10} textAnchor="middle" fontSize="22" fill="var(--text-muted)">Planets travel</text>
-          <text x={cx} y={cy + 18} textAnchor="middle" fontSize="22" fill="var(--text-muted)">through this belt</text>
+          <text x={cx} y={cy - 12} textAnchor="middle" fontSize="26" fill="var(--text-muted)">Planets travel</text>
+          <text x={cx} y={cy + 20} textAnchor="middle" fontSize="26" fill="var(--text-muted)">through this belt</text>
         </svg>
       </div>
     </div>
