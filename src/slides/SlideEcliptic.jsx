@@ -1,7 +1,8 @@
 export default function SlideEcliptic() {
-  const cx = 350, cy = 350, r = 260
+  const cx = 400, cy = 400, r = 260
   const signs = ['\u2648','\u2649','\u264A','\u264B','\u264C','\u264D','\u264E','\u264F','\u2650','\u2651','\u2652','\u2653']
   const names = ['Aries','Taurus','Gemini','Cancer','Leo','Virgo','Libra','Scorpio','Sagittarius','Capricorn','Aquarius','Pisces']
+  const qualities = ['bold, initiating','stable, sensual','curious, versatile','nurturing, emotional','confident, dramatic','analytical, precise','harmonizing, diplomatic','intense, transformative','adventurous, philosophical','disciplined, ambitious','innovative, independent','intuitive, compassionate']
   const els = ['fire','earth','air','water','fire','earth','air','water','fire','earth','air','water']
   const elC = { fire: '#E07A5F', earth: '#81B29A', air: '#85B7EB', water: '#AFA9EC' }
 
@@ -19,7 +20,7 @@ export default function SlideEcliptic() {
         </div>
 
         {/* Big central circle */}
-        <svg viewBox="0 0 700 700" style={{ flex: 1, maxHeight: '70vh' }}>
+        <svg viewBox="0 0 800 800" style={{ flex: 1, maxHeight: '70vh' }}>
           {/* Ecliptic belt */}
           <circle cx={cx} cy={cy} r={r} fill="none" stroke="rgba(201,168,76,0.25)" strokeWidth="65" opacity="0.25" />
 
@@ -32,14 +33,17 @@ export default function SlideEcliptic() {
             const ly1 = cy + (r - 32) * Math.sin(a1)
             const lx2 = cx + (r + 32) * Math.cos(a1)
             const ly2 = cy + (r + 32) * Math.sin(a1)
-            const nx = cx + (r + 52) * Math.cos(amid)
-            const ny = cy + (r + 52) * Math.sin(amid)
+            const nx = cx + (r + 55) * Math.cos(amid)
+            const ny = cy + (r + 55) * Math.sin(amid)
+            const qx = cx + (r + 75) * Math.cos(amid)
+            const qy = cy + (r + 75) * Math.sin(amid)
             const color = elC[els[i]]
             return (
               <g key={i}>
                 <line x1={lx1} y1={ly1} x2={lx2} y2={ly2} stroke={color} strokeWidth="0.8" opacity="0.35" />
                 <text x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize="40" fill={color}>{signs[i]}</text>
-                <text x={nx} y={ny} textAnchor="middle" dominantBaseline="central" fontSize="20" fill="var(--text-muted)">{names[i]}</text>
+                <text x={nx} y={ny} textAnchor="middle" dominantBaseline="central" fontSize="18" fill="var(--text)">{names[i]}</text>
+                <text x={qx} y={qy} textAnchor="middle" dominantBaseline="central" fontSize="11" fill="var(--text-muted)">{qualities[i]}</text>
               </g>
             )
           })}
