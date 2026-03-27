@@ -25,6 +25,7 @@ export default function SlideTable() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', flex: 1 }}>
       <h2>Energy, Elements & Modalities</h2>
+      <h3>Every sign has a unique combination — 4 elements × 3 modalities = 12</h3>
 
       {/* Legend */}
       <div style={{ display: 'flex', gap: 40, marginBottom: 16, marginTop: 8, flexWrap: 'wrap' }}>
