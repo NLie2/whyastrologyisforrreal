@@ -10,14 +10,14 @@
 .slide {
   position: absolute;
   inset: 0;
-  padding: 40px 60px 80px;
+  padding: 30px 50px 70px;
   display: flex;
   flex-direction: column;
   opacity: 0;
   transform: translateX(40px);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .slide.active {

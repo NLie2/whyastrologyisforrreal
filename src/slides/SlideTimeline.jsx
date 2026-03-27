@@ -56,7 +56,7 @@ export default function SlideTimeline() {
       <h2>Astrology Is <em>Ancient</em></h2>
       <h3>Older than almost everything you think of as "old"</h3>
 
-      <div style={{ position: 'relative', width: '100%', height: 520, marginTop: 0 }}>
+      <div style={{ position: 'relative', width: '100%', flex: 1, marginTop: 0 }}>
         {/* Main bar — centered */}
         <div style={{
           position: 'absolute', top: '50%', left: 0, right: 0, height: 5,
