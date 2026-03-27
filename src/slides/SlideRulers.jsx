@@ -53,8 +53,8 @@ export default function SlideRulers() {
           stroke="rgba(201,168,76,0.15)" strokeWidth="1" strokeDasharray="5 4" />
 
         {/* Side labels at top */}
-        <text x={cx - 50} y={30} textAnchor="end" fontSize="14" fill="var(--text-muted)" fontStyle="italic">Moon's side</text>
-        <text x={cx + 50} y={30} textAnchor="start" fontSize="14" fill="var(--text-muted)" fontStyle="italic">Sun's side</text>
+        <text x={cx - 50} y={30} textAnchor="end" fontSize="17" fill="var(--text-muted)" fontStyle="italic">Moon's side</text>
+        <text x={cx + 50} y={30} textAnchor="start" fontSize="17" fill="var(--text-muted)" fontStyle="italic">Sun's side</text>
 
         {/* Background circle */}
         <circle cx={cx} cy={cy} r={r + 15} fill="none" stroke="rgba(201,168,76,0.06)" strokeWidth="1" />
@@ -70,7 +70,7 @@ export default function SlideRulers() {
               <line x1={x1} y1={y1} x2={x2} y2={y2}
                 stroke={pair.color} strokeWidth="1" strokeDasharray="4 3" opacity="0.3" />
               <text x={midX} y={midY} textAnchor="middle" dominantBaseline="central"
-                fontSize="11" fill={pair.color} fontWeight="500" opacity="0.7">
+                fontSize="14" fill={pair.color} fontWeight="500" opacity="0.7">
                 {pair.ruler}
               </text>
             </g>
@@ -87,11 +87,11 @@ export default function SlideRulers() {
 
           return (
             <g key={i}>
-              <circle cx={x} cy={y} r={30} fill="var(--bg-light)" stroke={s.rColor} strokeWidth="1.5" />
-              <text x={x} y={y - 4} textAnchor="middle" dominantBaseline="central" fontSize="20" fill="var(--text)">{s.sym}</text>
-              <text x={x} y={y + 13} textAnchor="middle" fontSize="8" fill="var(--text-muted)">{s.name}</text>
+              <circle cx={x} cy={y} r={34} fill="var(--bg-light)" stroke={s.rColor} strokeWidth="1.5" />
+              <text x={x} y={y - 5} textAnchor="middle" dominantBaseline="central" fontSize="24" fill="var(--text)">{s.sym}</text>
+              <text x={x} y={y + 14} textAnchor="middle" fontSize="11" fill="var(--text-muted)">{s.name}</text>
               {/* Ruler label outside */}
-              <text x={lx} y={ly} textAnchor="middle" dominantBaseline="central" fontSize="11" fill={s.rColor}>{s.ruler}</text>
+              <text x={lx} y={ly} textAnchor="middle" dominantBaseline="central" fontSize="14" fill={s.rColor}>{s.ruler}</text>
             </g>
           )
         })}

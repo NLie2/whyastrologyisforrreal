@@ -91,17 +91,17 @@ export default function SlideDays() {
               {/* Planet body */}
               {renderBody(d.bodyType, x, y, 16)}
               {/* Day name + planet + god outside */}
-              <text x={lx} y={ly - 18} textAnchor="middle" dominantBaseline="central"
-                fontSize="15" fill={d.color} fontWeight="500">{d.day}</text>
-              <text x={lx} y={ly} textAnchor="middle" fontSize="13" fill="var(--text)">{d.planet}</text>
-              <text x={lx} y={ly + 16} textAnchor="middle" fontSize="11" fill="var(--text-muted)">{d.god}</text>
+              <text x={lx} y={ly - 22} textAnchor="middle" dominantBaseline="central"
+                fontSize="19" fill={d.color} fontWeight="500">{d.day}</text>
+              <text x={lx} y={ly} textAnchor="middle" fontSize="16" fill="var(--text)">{d.planet}</text>
+              <text x={lx} y={ly + 20} textAnchor="middle" fontSize="14" fill="var(--text-muted)">{d.god}</text>
             </g>
           )
         })}
 
         {/* Center label */}
-        <text x={cx} y={cy - 8} textAnchor="middle" fontSize="16" fill="var(--text)" fontFamily="'Playfair Display', Georgia, serif">Seven</text>
-        <text x={cx} y={cy + 14} textAnchor="middle" fontSize="16" fill="var(--text)" fontFamily="'Playfair Display', Georgia, serif">Planets</text>
+        <text x={cx} y={cy - 10} textAnchor="middle" fontSize="20" fill="var(--text)" fontFamily="'Playfair Display', Georgia, serif">Seven</text>
+        <text x={cx} y={cy + 16} textAnchor="middle" fontSize="20" fill="var(--text)" fontFamily="'Playfair Display', Georgia, serif">Planets</text>
       </svg>
     </div>
   )

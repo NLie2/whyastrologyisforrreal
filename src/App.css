@@ -31,10 +31,10 @@
   transform: translateX(-40px);
 }
 
-/* Typography — BIGGER */
+/* Typography */
 h1 {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 3.5em;
+  font-size: 3.8rem;
   font-weight: 400;
   color: var(--accent);
   line-height: 1.15;
@@ -42,29 +42,30 @@ h1 {
 
 h2 {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.4em;
+  font-size: 2.6rem;
   font-weight: 400;
   color: var(--accent);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
 }
 
 h3 {
-  font-size: 1.15em;
+  font-size: 1.3rem;
   font-weight: 400;
   color: var(--text-muted);
   margin-bottom: 20px;
+  line-height: 1.5;
 }
 
 p {
-  font-size: 1.05em;
-  line-height: 1.7;
+  font-size: 1.15rem;
+  line-height: 1.75;
   color: var(--text);
 }
 
 .highlight { color: var(--accent); }
 .highlight2 { color: var(--accent2); }
-.small { font-size: 0.85em; color: var(--text-muted); }
-.note { font-size: 0.9em; color: var(--accent); font-style: italic; margin-top: 12px; }
+.small { font-size: 0.95rem; color: var(--text-muted); }
+.note { font-size: 1rem; color: var(--accent); font-style: italic; margin-top: 12px; }
 
 /* Navigation */
 .nav {
@@ -129,7 +130,7 @@ p {
 }
 
 .nav .slide-num {
-  font-size: 0.75em;
+  font-size: 0.8rem;
   color: var(--text-muted);
   min-width: 40px;
   text-align: center;
@@ -165,16 +166,16 @@ p {
 .card {
   background: var(--bg-card);
   border-radius: 12px;
-  padding: 18px;
+  padding: 20px;
   border: 1px solid rgba(201, 168, 76, 0.1);
 }
 
 /* Badges */
 .badge {
   display: inline-block;
-  padding: 3px 12px;
+  padding: 4px 14px;
   border-radius: 12px;
-  font-size: 0.85em;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 .badge-fire { background: rgba(224,122,95,0.18); color: var(--fire); }

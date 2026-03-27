@@ -38,8 +38,8 @@ export default function SlideHouseMeanings() {
         })}
 
         {/* Center */}
-        <text x={cx} y={cy - 8} textAnchor="middle" fontSize="14" fill="var(--text-muted)">Opposites</text>
-        <text x={cx} y={cy + 12} textAnchor="middle" fontSize="13" fill="var(--text-muted)">mirror</text>
+        <text x={cx} y={cy - 10} textAnchor="middle" fontSize="18" fill="var(--text-muted)">Opposites</text>
+        <text x={cx} y={cy + 14} textAnchor="middle" fontSize="16" fill="var(--text-muted)">mirror</text>
 
         {/* House nodes */}
         {houses.map((h, i) => {
@@ -51,10 +51,10 @@ export default function SlideHouseMeanings() {
 
           return (
             <g key={i}>
-              <circle cx={x} cy={y} r={36} fill="var(--bg-light)" stroke={color} strokeWidth="1.5" />
-              <text x={x} y={y - 10} textAnchor="middle" dominantBaseline="central" fontSize="20" fill={color} fontWeight="500">{h.n}</text>
-              <text x={x} y={y + 6} textAnchor="middle" fontSize="10" fill="var(--text)" fontWeight="500">{h.label}</text>
-              <text x={x} y={y + 18} textAnchor="middle" fontSize="7.5" fill="var(--text-muted)">{h.desc}</text>
+              <circle cx={x} cy={y} r={40} fill="var(--bg-light)" stroke={color} strokeWidth="1.5" />
+              <text x={x} y={y - 12} textAnchor="middle" dominantBaseline="central" fontSize="24" fill={color} fontWeight="500">{h.n}</text>
+              <text x={x} y={y + 6} textAnchor="middle" fontSize="13" fill="var(--text)" fontWeight="500">{h.label}</text>
+              <text x={x} y={y + 20} textAnchor="middle" fontSize="10" fill="var(--text-muted)">{h.desc}</text>
             </g>
           )
         })}

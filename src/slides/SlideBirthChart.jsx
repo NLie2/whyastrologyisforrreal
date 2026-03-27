@@ -22,9 +22,8 @@ export default function SlideBirthChart() {
           />
         </div>
         <div>
-          <p style={{ fontSize: '1.05em' }}>Pick a house. Look at its sign. Find that sign's ruler. See where <em>that</em> planet landed. Repeat until the chain loops.</p>
+          <p>Pick a house. Look at its sign. Find that sign's ruler. See where <em>that</em> planet landed. Repeat until the chain loops.</p>
 
-          {/* Chain as vertical steps — easier to follow */}
           <div style={{ marginTop: 20, display: 'flex', flexDirection: 'column', gap: 0 }}>
             {[
               { step: '3rd house is ♋ Cancer', who: 'ruled by ☽ Moon', kw: 'communication · nurturing', color: '#AFA9EC' },
@@ -35,27 +34,27 @@ export default function SlideBirthChart() {
             ].map((s, i) => (
               <div key={i}>
                 <div style={{
-                  display: 'flex', alignItems: 'center', gap: 12, padding: '8px 14px',
+                  display: 'flex', alignItems: 'center', gap: 14, padding: '10px 16px',
                   borderRadius: 8,
                   background: s.anchor ? 'rgba(201,168,76,0.12)' : 'rgba(255,255,255,0.02)',
                   border: s.anchor ? '1px solid var(--accent)' : '1px solid transparent',
                 }}>
-                  <div style={{ width: 10, height: 10, borderRadius: '50%', background: s.color, flexShrink: 0 }} />
+                  <div style={{ width: 12, height: 12, borderRadius: '50%', background: s.color, flexShrink: 0 }} />
                   <div style={{ flex: 1 }}>
-                    <span style={{ fontSize: 14, color: 'var(--text)', fontWeight: 500 }}>{s.step}</span>
-                    {s.who && <span style={{ fontSize: 13, color: 'var(--text-muted)' }}> — {s.who}</span>}
-                    {s.anchor && <span style={{ fontSize: 13, color: 'var(--accent)', fontWeight: 600 }}> — anchor ✦</span>}
+                    <span style={{ fontSize: 17, color: 'var(--text)', fontWeight: 500 }}>{s.step}</span>
+                    {s.who && <span style={{ fontSize: 16, color: 'var(--text-muted)' }}> — {s.who}</span>}
+                    {s.anchor && <span style={{ fontSize: 16, color: 'var(--accent)', fontWeight: 600 }}> — anchor ✦</span>}
                   </div>
-                  <span style={{ fontSize: 11, color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>{s.kw}</span>
+                  <span style={{ fontSize: 14, color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>{s.kw}</span>
                 </div>
                 {i < 4 && (
-                  <div style={{ marginLeft: 18, height: 14, borderLeft: '1.5px dashed rgba(201,168,76,0.25)' }} />
+                  <div style={{ marginLeft: 20, height: 14, borderLeft: '1.5px dashed rgba(201,168,76,0.25)' }} />
                 )}
               </div>
             ))}
           </div>
 
-          <p style={{ marginTop: 14, fontSize: '0.85em', color: 'var(--text-muted)' }}>
+          <p style={{ marginTop: 16, color: 'var(--text-muted)' }}>
             Venus rules Cancer and is <em>in</em> Cancer — <span className="highlight">domicile</span>. The landlord is home. The chain ends here.
           </p>
         </div>

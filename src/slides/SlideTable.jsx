@@ -23,12 +23,12 @@ export default function SlideTable() {
   }
 
   const thStyle = {
-    color: 'var(--accent)', fontWeight: 600, padding: '10px 12px',
+    color: 'var(--accent)', fontWeight: 600, padding: '10px 14px',
     borderBottom: '2px solid rgba(201,168,76,0.3)',
-    textAlign: 'left', fontSize: 14, textTransform: 'uppercase', letterSpacing: 0.5
+    textAlign: 'left', fontSize: 16, textTransform: 'uppercase', letterSpacing: 0.5
   }
   const tdStyle = {
-    padding: '8px 12px', borderBottom: '1px solid rgba(255,255,255,0.05)', fontSize: 15
+    padding: '8px 14px', borderBottom: '1px solid rgba(255,255,255,0.05)', fontSize: 17
   }
 
   return (
@@ -64,8 +64,8 @@ export default function SlideTable() {
                 ? 'rgba(239,199,100,0.18)' : 'rgba(80,80,120,0.25)'
               return (
                 <tr key={i} style={{ background: elRowBg[d.el] }}>
-                  <td style={{ ...tdStyle, fontWeight: 600, color: 'var(--text)', fontSize: 16 }}>{d.sign}</td>
-                  <td style={{ ...tdStyle, fontSize: 22 }}>{d.sym}</td>
+                  <td style={{ ...tdStyle, fontWeight: 600, color: 'var(--text)', fontSize: 18 }}>{d.sign}</td>
+                  <td style={{ ...tdStyle, fontSize: 26 }}>{d.sym}</td>
                   <td style={{ ...tdStyle, background: energyBg }}>
                     <span className={`badge badge-${d.energy === 'Masculine' ? 'masc' : 'fem'}`}>{d.energy}</span>
                   </td>

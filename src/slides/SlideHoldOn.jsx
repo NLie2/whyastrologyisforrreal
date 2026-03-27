@@ -48,9 +48,9 @@ export default function SlideHoldOn() {
   ]
 
   const tagStyle = {
-    display: 'inline-block', fontSize: 12, padding: '2px 10px', borderRadius: 10,
+    display: 'inline-block', fontSize: 14, padding: '3px 12px', borderRadius: 10,
     background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)',
-    color: 'var(--text-muted)', marginTop: 2,
+    color: 'var(--text-muted)', marginTop: 3,
   }
 
   return (
@@ -80,38 +80,38 @@ export default function SlideHoldOn() {
           {steps.map((s, i) => (
             <div key={i}>
               <div style={{
-                display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 14,
-                padding: '12px 16px', borderRadius: 10,
+                display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16,
+                padding: '14px 20px', borderRadius: 10,
                 background: s.anchor ? 'rgba(127,119,221,0.1)' : 'rgba(255,255,255,0.015)',
                 border: s.anchor ? '1px solid var(--accent2)' : '1px solid rgba(255,255,255,0.04)',
               }}>
                 <div>
-                  <div style={{ fontSize: 10, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 2 }}>Planet</div>
-                  <div style={{ fontSize: 15, color: s.planetColor, fontWeight: 600 }}>{s.planet}</div>
+                  <div style={{ fontSize: 13, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 3 }}>Planet</div>
+                  <div style={{ fontSize: 19, color: s.planetColor, fontWeight: 600 }}>{s.planet}</div>
                   <div style={tagStyle}>{s.planetKw}</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: 10, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 2 }}>in sign</div>
-                  <div style={{ fontSize: 15, color: s.signColor, fontWeight: 600 }}>{s.sign}</div>
+                  <div style={{ fontSize: 13, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 3 }}>in sign</div>
+                  <div style={{ fontSize: 19, color: s.signColor, fontWeight: 600 }}>{s.sign}</div>
                   <div style={tagStyle}>{s.signKw}</div>
                 </div>
                 <div>
-                  <div style={{ fontSize: 10, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 2 }}>in house</div>
-                  <div style={{ fontSize: 15, color: 'var(--text)', fontWeight: 600 }}>{s.house} house</div>
+                  <div style={{ fontSize: 13, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: 0.5, marginBottom: 3 }}>in house</div>
+                  <div style={{ fontSize: 19, color: 'var(--text)', fontWeight: 600 }}>{s.house} house</div>
                   <div style={tagStyle}>{s.houseKw}</div>
                 </div>
               </div>
 
               {s.note && (
-                <div style={{ marginLeft: 16, marginTop: 4, fontSize: 12, color: 'var(--accent2)', fontStyle: 'italic' }}>
+                <div style={{ marginLeft: 20, marginTop: 6, fontSize: 15, color: 'var(--accent2)', fontStyle: 'italic' }}>
                   ✦ {s.note}
                 </div>
               )}
 
               {i < steps.length - 1 && (
-                <div style={{ display: 'flex', alignItems: 'center', marginLeft: 26, height: 18 }}>
+                <div style={{ display: 'flex', alignItems: 'center', marginLeft: 30, height: 20 }}>
                   <div style={{ borderLeft: '1.5px dashed rgba(127,119,221,0.3)', height: '100%' }} />
-                  <span style={{ fontSize: 11, color: 'var(--text-muted)', marginLeft: 10 }}>
+                  <span style={{ fontSize: 14, color: 'var(--text-muted)', marginLeft: 12 }}>
                     Aquarius is ruled by ♄ Saturn...
                   </span>
                 </div>
@@ -120,15 +120,15 @@ export default function SlideHoldOn() {
           ))}
 
           {/* AI Safety keywords */}
-          <div style={{ marginTop: 18, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 8 }}>
+          <div style={{ marginTop: 16, display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
             {aiKeywords.map((item, i) => (
               <div key={i} style={{
-                padding: '10px 12px', borderRadius: 8,
+                padding: '12px 14px', borderRadius: 8,
                 background: 'rgba(255,255,255,0.02)',
                 border: '1px solid rgba(255,255,255,0.05)',
               }}>
-                <div style={{ fontSize: 13, color: item.color, fontWeight: 600, marginBottom: 4 }}>{item.label}</div>
-                <div style={{ fontSize: 11, color: 'var(--text-muted)', lineHeight: 1.5 }}>
+                <div style={{ fontSize: 16, color: item.color, fontWeight: 600, marginBottom: 5 }}>{item.label}</div>
+                <div style={{ fontSize: 14, color: 'var(--text-muted)', lineHeight: 1.6 }}>
                   {item.keywords.map((kw, j) => (
                     <span key={j}>
                       {kw}{j < item.keywords.length - 1 ? ' · ' : ''}
