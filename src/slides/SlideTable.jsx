@@ -66,17 +66,17 @@ export default function SlideTable() {
         </div>
       </div>
 
-      {/* Column headers */}
-      <div style={{ display: 'grid', gridTemplateColumns: cols, gap: 8, alignItems: 'center', marginBottom: 3 }}>
-        <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: 0.5 }}>Sign</div>
-        <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: 0.5 }}>Season</div>
-        <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: 0.5 }}>Energy</div>
-        <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: 0.5 }}>Quality</div>
-        <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: 0.5 }}>Element</div>
-      </div>
-
-      {/* Rows */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 3, flex: 1, justifyContent: 'center' }}>
+      {/* Table — single container so header + rows share exact same width */}
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+        {/* Header */}
+        <div style={{ display: 'grid', gridTemplateColumns: cols, gap: 8, alignItems: 'center', marginBottom: 6 }}>
+          <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: 0.5 }}>Sign</div>
+          <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: 0.5 }}>Season</div>
+          <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: 0.5 }}>Energy</div>
+          <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: 0.5 }}>Quality</div>
+          <div style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500, textTransform: 'uppercase', letterSpacing: 0.5 }}>Element</div>
+        </div>
+        {/* Rows */}
         {data.map((d, i) => {
           const isSeasonStart = d.pos === 'start'
           return (
@@ -84,6 +84,7 @@ export default function SlideTable() {
               display: 'grid', gridTemplateColumns: cols, gap: 8, alignItems: 'center',
               borderTop: isSeasonStart ? '1px solid rgba(255,255,255,0.08)' : 'none',
               paddingTop: isSeasonStart ? 4 : 0,
+              marginTop: isSeasonStart && i > 0 ? 2 : 0,
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 <span style={{ fontSize: 20 }}>{d.sym}</span>
