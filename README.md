@@ -1,16 +1,26 @@
-# React + Vite
+# Why Astrology Is for F*** Real
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive slideshow that walks through the basics of astrology — from its 6,000-year history to zodiac signs, planetary rulers, houses, birth charts, and why the whole system is way more elegant than you'd expect.
 
-Currently, two official plugins are available:
+**[View the presentation](https://nlie2.github.io/whyastrologyisforrreal/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## What's in it
 
-## React Compiler
+- How old astrology actually is (spoiler: older than almost everything)
+- Why the days of the week are named after planets
+- The zodiac belt, what "your sign" really means, and precession
+- Planetary rulers and their symmetric geometry
+- Elements, modalities, and the 12 unique combinations
+- Houses, birth charts, and dispositor chains
+- A live reading that lands somewhere unexpected
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Running locally
 
-## Expanding the ESLint configuration
+```bash
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Built with
+
+React + Vite, deployed via GitHub Pages.
