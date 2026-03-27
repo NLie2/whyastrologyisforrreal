@@ -64,8 +64,7 @@ export default function SlideTable() {
       </div>
 
       {/* Column headers */}
-      <div style={{ display: 'grid', gridTemplateColumns: '40px 140px 1fr 1fr 1fr', gap: 8, alignItems: 'center', marginBottom: 4 }}>
-        <div />
+      <div style={{ display: 'grid', gridTemplateColumns: '180px 1fr 1fr 1fr', gap: 8, alignItems: 'center', marginBottom: 4 }}>
         <div style={{ fontSize: 13, color: 'var(--text-muted)', fontWeight: 500 }}>Signs</div>
         <div style={{ fontSize: 13, color: 'var(--text-muted)', fontWeight: 500 }}>Energy</div>
         <div style={{ fontSize: 13, color: 'var(--text-muted)', fontWeight: 500 }}>Quality</div>
@@ -76,10 +75,12 @@ export default function SlideTable() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: 4, flex: 1, justifyContent: 'center' }}>
         {data.map((d, i) => (
           <div key={i} style={{
-            display: 'grid', gridTemplateColumns: '40px 140px 1fr 1fr 1fr', gap: 8, alignItems: 'center',
+            display: 'grid', gridTemplateColumns: '180px 1fr 1fr 1fr', gap: 8, alignItems: 'center',
           }}>
-            <div style={{ fontSize: 22, textAlign: 'center' }}>{d.sym}</div>
-            <div style={{ fontSize: 16, color: 'var(--text)', fontWeight: 500 }}>{d.sign}</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+              <span style={{ fontSize: 22 }}>{d.sym}</span>
+              <span style={{ fontSize: 16, color: 'var(--text)', fontWeight: 500 }}>{d.sign}</span>
+            </div>
             <div style={blockStyle(energyColors[d.energy])} />
             <div style={blockStyle(modColors[d.mod])} />
             <div style={blockStyle(elColors[d.el])} />
