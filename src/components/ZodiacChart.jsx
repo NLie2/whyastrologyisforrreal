@@ -149,7 +149,7 @@ export default function ZodiacChart({ showControls = true, defaultView = 'signs'
           }}>Houses overlay</button>
         </div>
       )}
-      <svg viewBox="0 0 560 560" style={{ width: '100%' }}>{chart}</svg>
+      <svg viewBox="0 0 560 560" style={{ width: '100%', maxHeight: 'calc(100vh - 300px)' }}>{chart}</svg>
       {showControls && view === 'houses' && (
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, fontSize: 11, color: 'var(--text-muted)', justifyContent: 'center', marginTop: 4 }}>
           <span>Birth time</span>
