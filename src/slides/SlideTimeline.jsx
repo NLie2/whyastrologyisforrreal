@@ -1,5 +1,6 @@
 export default function SlideTimeline() {
   // Tiers: 0 = far above, 1 = mid above, 2 = near above, 3 = near below, 4 = mid below, 5 = far below
+  // Carefully assigned so horizontally close events never share a tier
   const events = [
     { year: -4000, label: 'Indo-European\nastrological roots', color: 'var(--accent)', tier: 0 },
     { year: -3000, label: 'Babylonian\nstar catalogues', color: 'var(--accent)', tier: 5 },
@@ -10,47 +11,44 @@ export default function SlideTimeline() {
     { year: -44, label: 'Roman Republic\nfalls', color: 'var(--accent2)', tier: 0 },
     { year: 476, label: 'Fall of\nRome', color: 'var(--accent2)', tier: 5 },
     { year: 1066, label: 'Norman\nConquest', color: 'var(--accent2)', tier: 0 },
-    { year: 1492, label: 'Columbus', color: 'var(--accent2)', tier: 5 },
+    { year: 1492, label: 'Columbus', color: 'var(--accent2)', tier: 4 },
     { year: 1776, label: 'American\nRevolution', color: 'var(--accent2)', tier: 0 },
     { year: 1789, label: 'French\nRevolution', color: 'var(--accent2)', tier: 3 },
-    { year: 1914, label: 'World War I', color: 'var(--accent2)', tier: 1 },
-    { year: 1939, label: 'World War II', color: 'var(--accent2)', tier: 5 },
-    { year: 1969, label: 'Internet\ninvented', color: 'var(--accent2)', tier: 0 },
-    { year: 2015, label: 'HPMOR', color: 'var(--accent2)', tier: 4 },
-    { year: 2022, label: 'ChatGPT', color: 'var(--accent2)', tier: 2 },
-    { year: 2025, label: '', color: 'var(--text)', tier: 5 },
+    { year: 1914, label: 'WWI', color: 'var(--accent2)', tier: 5 },
+    { year: 1939, label: 'WWII', color: 'var(--accent2)', tier: 1 },
+    { year: 1969, label: 'Internet', color: 'var(--accent2)', tier: 4 },
+    { year: 2015, label: 'HPMOR', color: 'var(--accent2)', tier: 0 },
+    { year: 2022, label: 'ChatGPT', color: 'var(--accent2)', tier: 5 },
   ]
 
   const minYear = -4500
-  const maxYear = 2200
+  const maxYear = 2300
   const pct = (y) => ((y - minYear) / (maxYear - minYear)) * 100
 
-  // 6 vertical tiers — spaced further apart to prevent overlap
-  // Tiers 0,1,2 above the line; 3,4,5 below
+  // 6 vertical tiers — spread further apart for bigger text
   const tierLabelTop = {
-    0: 'calc(50% - 175px)',
-    1: 'calc(50% - 115px)',
-    2: 'calc(50% - 60px)',
-    3: 'calc(50% + 30px)',
-    4: 'calc(50% + 85px)',
-    5: 'calc(50% + 140px)',
+    0: 'calc(50% - 200px)',
+    1: 'calc(50% - 130px)',
+    2: 'calc(50% - 65px)',
+    3: 'calc(50% + 35px)',
+    4: 'calc(50% + 100px)',
+    5: 'calc(50% + 165px)',
   }
-  // Tick starts and heights connecting label to bar
   const tierTickTop = {
-    0: 'calc(50% - 70px)',
-    1: 'calc(50% - 45px)',
+    0: 'calc(50% - 80px)',
+    1: 'calc(50% - 50px)',
     2: 'calc(50% - 20px)',
     3: '50%',
     4: '50%',
     5: '50%',
   }
   const tierTickHeight = {
-    0: 70,
-    1: 45,
+    0: 80,
+    1: 50,
     2: 20,
     3: 20,
-    4: 45,
-    5: 70,
+    4: 50,
+    5: 80,
   }
 
   return (
@@ -58,24 +56,24 @@ export default function SlideTimeline() {
       <h2>Astrology Is <em>Ancient</em></h2>
       <h3>Older than almost everything you think of as "old"</h3>
 
-      <div style={{ position: 'relative', width: '100%', height: 480, marginTop: 0 }}>
+      <div style={{ position: 'relative', width: '100%', height: 520, marginTop: 0 }}>
         {/* Main bar — centered */}
         <div style={{
-          position: 'absolute', top: '50%', left: 0, right: 0, height: 4,
+          position: 'absolute', top: '50%', left: 0, right: 0, height: 5,
           background: 'linear-gradient(90deg, var(--accent), var(--accent2))', borderRadius: 2,
           transform: 'translateY(-50%)'
         }} />
 
         {/* Ancient highlight */}
         <div style={{
-          position: 'absolute', top: 'calc(50% - 8px)', left: `${pct(-4000)}%`, width: `${pct(-323) - pct(-4000)}%`,
-          height: 16, background: 'rgba(201,168,76,0.12)', borderRadius: 6
+          position: 'absolute', top: 'calc(50% - 10px)', left: `${pct(-4000)}%`, width: `${pct(-323) - pct(-4000)}%`,
+          height: 20, background: 'rgba(201,168,76,0.12)', borderRadius: 6
         }} />
 
         {/* Modern highlight */}
         <div style={{
-          position: 'absolute', top: 'calc(50% - 8px)', left: `${pct(-44)}%`, width: `${pct(2025) - pct(-44)}%`,
-          height: 16, background: 'rgba(127,119,221,0.08)', borderRadius: 6
+          position: 'absolute', top: 'calc(50% - 10px)', left: `${pct(-44)}%`, width: `${pct(2025) - pct(-44)}%`,
+          height: 20, background: 'rgba(127,119,221,0.08)', borderRadius: 6
         }} />
 
         {events.map((e, i) => {
@@ -88,7 +86,7 @@ export default function SlideTimeline() {
               <div style={{
                 position: 'absolute', left: `${left}%`,
                 top: tierTickTop[e.tier],
-                width: 1.5, height: tierTickHeight[e.tier],
+                width: 2, height: tierTickHeight[e.tier],
                 background: e.color, opacity: 0.35
               }} />
               {/* Label */}
@@ -96,17 +94,18 @@ export default function SlideTimeline() {
                 position: 'absolute', left: `${left}%`,
                 top: tierLabelTop[e.tier],
                 transform: 'translateX(-50%)', textAlign: 'center',
-                fontSize: 10, color: e.color, whiteSpace: 'pre-line', lineHeight: 1.3
+                fontSize: 15, color: e.color, whiteSpace: 'pre-line', lineHeight: 1.35,
+                fontWeight: 500,
               }}>
                 {isAbove ? (
                   <>
                     {e.label}
                     <br />
-                    <span style={{ fontSize: 9, color: 'var(--text-muted)' }}>{yearStr}</span>
+                    <span style={{ fontSize: 13, color: 'var(--text-muted)', fontWeight: 400 }}>{yearStr}</span>
                   </>
                 ) : (
                   <>
-                    <span style={{ fontSize: 9, color: 'var(--text-muted)' }}>{yearStr}</span>
+                    <span style={{ fontSize: 13, color: 'var(--text-muted)', fontWeight: 400 }}>{yearStr}</span>
                     <br />
                     {e.label}
                   </>
@@ -118,8 +117,8 @@ export default function SlideTimeline() {
 
         {/* Scale comparison */}
         <div style={{
-          position: 'absolute', bottom: -5, left: 0, right: 0,
-          textAlign: 'center', fontSize: 14, color: 'var(--text-muted)'
+          position: 'absolute', bottom: -15, left: 0, right: 0,
+          textAlign: 'center', fontSize: 17, color: 'var(--text-muted)'
         }}>
           Astrology: <span style={{ color: 'var(--accent)', fontWeight: 600 }}>~6,000 years</span>
           &nbsp;&middot;&nbsp;
